@@ -1,0 +1,32 @@
+/** @format */
+
+.slider {
+  display: flex;
+  background: #ffecd1;
+  border-radius: 30px;
+  width: 95%;
+  margin-top: 20px;
+  align-items: center;
+
+  .text {
+    padding-left: 8rem;
+
+    h2 {
+      margin: 0 0 10px 0;
+    }
+    p {
+      color: #747680;
+    }
+
+    button {
+      background-color: #fb9300;
+      margin: 10px 0 5px 0;
+      padding: 15px 25px;
+      color: white;
+      outline: none;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+  }
+}

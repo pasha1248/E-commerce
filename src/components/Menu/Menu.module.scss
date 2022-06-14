@@ -1,0 +1,42 @@
+/** @format */
+
+.menu {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  width: 90%;
+
+  .item {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 120px;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.2s ease;
+
+    img {
+      padding: 10px;
+    }
+
+    .arrow {
+      color: #fb9300;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  }
+  .active {
+    background-color: #fb9300;
+    color: white;
+    img {
+      background-color: white;
+      border-radius: 50%;
+    }
+    .arrow {
+      color: white;
+    }
+  }
+}

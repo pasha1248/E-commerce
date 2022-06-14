@@ -1,0 +1,39 @@
+/** @format */
+
+.navbar {
+  background: #ffffff;
+  padding: 30px;
+  width: 100px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  position: fixed;
+  display: inline-block;
+  height: 88vh;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .item {
+    margin: 15px;
+  }
+
+  ul {
+    li {
+      display: flex;
+      margin-bottom: 3.4rem;
+      font-size: 25px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+    .active {
+      border-radius: 50%;
+      color: white;
+      background-color: #fb9300;
+    }
+  }
+}

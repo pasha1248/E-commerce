@@ -1,0 +1,69 @@
+/** @format */
+
+.pizzaContainer {
+  margin-top: 30px;
+  //   display: grid;
+  //   grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+
+  .image {
+    border-radius: 50%;
+  }
+  h2 {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .select {
+    background-color: #ffecd1;
+    padding: 20px;
+    border-radius: 20px;
+    color: rgb(67, 67, 67);
+    font-weight: 600;
+    font-size: 20px;
+
+    .active {
+      background-color: #fb9300;
+      color: white;
+      border-radius: 10px;
+    }
+    ul {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-around;
+
+      li {
+        border-bottom: 0.2px solid gray;
+        cursor: pointer;
+        padding: 10px;
+      }
+    }
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    font-size: 25px;
+    .count {
+      position: absolute;
+    }
+
+    button {
+      outline: none;
+      border: none;
+      background: transparent;
+      color: #fb9300;
+      cursor: pointer;
+
+      .icon:active {
+        opacity: 0.7;
+      }
+    }
+    .icon {
+      font-size: 45px;
+    }
+  }
+}
