@@ -1,0 +1,38 @@
+/** @format */
+
+.pop {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+
+  ul {
+    overflow: hidden;
+    li {
+      cursor: pointer;
+      padding: 5px;
+      &:hover {
+        background: rgba(254, 95, 30, 0.05);
+      }
+
+      &.active {
+        font-weight: bold;
+        color: orange;
+      }
+    }
+  }
+  .popap {
+    padding: 10px;
+    span {
+      color: orange;
+    }
+  }
+  .popapItem {
+    border-radius: 20px;
+    padding: 10px;
+    background: rgb(255, 229, 142);
+    position: absolute;
+    right: 0;
+    top: 35px;
+  }
+}

@@ -18,6 +18,9 @@
     margin-top: 20px;
   }
   .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 15px;
   }
 
@@ -29,11 +32,36 @@
       cursor: pointer;
       align-items: center;
       justify-content: center;
+      transition: all 0.2 ease;
     }
     .active {
       border-radius: 50%;
       color: white;
       background-color: #fb9300;
+      transition: opacity 0.3s ease;
     }
+  }
+}
+@media (max-width: 900px) {
+  .navbar {
+    width: 70px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    width: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    display: none;
   }
 }

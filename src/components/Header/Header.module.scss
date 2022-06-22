@@ -21,15 +21,70 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 85px;
-    border-radius: 20px;
-    background-color: white;
-    border: solid 1px #f2f2f2;
-    font-size: 25px;
+    position: relative;
 
     input {
       font-size: 20px;
       font-weight: 500;
+      padding: 20px 85px;
+      border-radius: 20px;
+      background-color: white;
+      border: solid 1px #f2f2f2;
+      font-size: 25px;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border: 1px solid rgb(169, 169, 169);
+      }
+    }
+
+    .icon {
+      position: absolute;
+      right: 100px;
+      font-size: 25px;
+      color: gray;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    .left {
+      padding: 15px 40px;
+    }
+
+    input {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    .left {
+      padding: 10px 30px;
+    }
+
+    input {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    .left {
+      padding: 5px 7px;
+    }
+
+    input {
+      font-size: 18px;
+      font-weight: 400;
     }
   }
 }

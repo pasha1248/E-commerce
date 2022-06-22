@@ -1,0 +1,84 @@
+/** @format */
+
+.cleare {
+  transition: color 0.3 ease;
+  color: gray;
+
+  &:hover {
+    opacity: 1;
+    color: #fb9300;
+  }
+}
+.list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 10px;
+  .item {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(254, 243, 223);
+    padding: 15px;
+    border-radius: 20px;
+
+    img {
+      border-radius: 50%;
+    }
+
+    .itemLeft {
+      display: flex;
+      align-items: center;
+      width: 200px;
+      margin-left: 10px;
+
+      .pizzaInfo {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+      }
+    }
+
+    .itemCound {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+    }
+    .icon {
+      font-size: 27px;
+      padding: 10px;
+      color: orange;
+      cursor: pointer;
+    }
+  }
+  .total {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+
+    b {
+      font-size: 30px;
+      padding: 10px;
+      color: #fb9300;
+    }
+
+    button {
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background: #fb9300;
+      padding: 15px 25px;
+      color: white;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

@@ -27,3 +27,38 @@ textarea {
   outline: none;
   border: none;
 }
+
+@media (max-width: 1200px) {
+  .App {
+    grid-template-columns: 20% 75% 10%;
+  }
+  .content {
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    grid-template-columns: 25% 70%;
+  }
+  .content {
+  }
+}
+
+@media (max-width: 500px) {
+  .App {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .food {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 8vh;
+  }
+}

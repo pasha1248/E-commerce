@@ -3,10 +3,13 @@
 import React, { useState } from 'react'
 import style from './Menu.module.scss'
 import { IoIosArrowDroprightCircle } from 'react-icons/io'
+import { Link } from 'react-router-dom'
+import 'macro-css'
 
-const MenuItem = ({ item, id, addMenu2, active }) => {
+const MenuItem = ({ item, id, addMenu2, active, menuClick }) => {
   const addMenu = () => {
     addMenu2(id)
+    menuClick(item.path)
   }
 
   return (

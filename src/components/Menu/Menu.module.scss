@@ -1,5 +1,9 @@
 /** @format */
-
+a {
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
 .menu {
   margin-top: 20px;
   display: grid;
@@ -17,6 +21,7 @@
     cursor: pointer;
     background-color: white;
     transition: all 0.2s ease;
+    text-decoration: none;
 
     img {
       padding: 10px;
@@ -38,5 +43,20 @@
     .arrow {
       color: white;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .menu {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .menu {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
