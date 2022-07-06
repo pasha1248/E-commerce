@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import style from './BasketEmpty.module.scss'
 
-const BasketEmpty = () => {
+const BasketEmpty: React.FC = () => {
   return (
     <div className={style.basket}>
       <h1>Basket is Empty</h1>

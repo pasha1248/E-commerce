@@ -2,6 +2,11 @@
 
 import { createSlice } from '@reduxjs/toolkit'
 
+interface FilterSliceState {
+  categoryId: string
+  sort: string
+}
+
 const initialState = {
   categoryId: 'Popular',
   sort: 'name',

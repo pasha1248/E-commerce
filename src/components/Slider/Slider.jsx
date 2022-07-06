@@ -8,7 +8,7 @@ const Slider = () => {
   return (
     <div>
       <article className={style.slider}>
-        <img src={delivery} alt='photo' height={200} />
+        <img src={delivery ? delivery : ''} alt='photo' height={200} />
         <div className={style.text}>
           <h2>Very fast delivery</h2>
           <p>

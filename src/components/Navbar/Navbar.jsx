@@ -10,9 +10,19 @@ import { BsCart2 } from 'react-icons/bs'
 import { BsHeart } from 'react-icons/bs'
 import { MdPlaylistAddCheck } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const Navbar = () => {
   const [active, setActive] = React.useState(1)
+
+  const { pathname } = useLocation()
+  React.useEffect(() => {
+    console.log(2)
+    if (pathname === '/basket') {
+      setActive(2)
+    }
+  }, [pathname])
+
   return (
     <nav className={style.navbar}>
       <div className={`clear ${style.list}`}>
@@ -27,6 +37,7 @@ const Navbar = () => {
           </li>
           <br />
           <br />
+
           <li
             onClick={() => setActive(2)}
             className={active === 2 && style.active}
@@ -35,6 +46,7 @@ const Navbar = () => {
               <BsCart2 className={style.item} />
             </Link>
           </li>
+
           <li
             onClick={() => setActive(3)}
             className={active === 3 && style.active}

@@ -12,7 +12,25 @@ import {
   removeItem,
 } from '../../redux/Slisers/basketSlice'
 
-const BasketItem = ({ id, name, price, image, count, type, size }) => {
+type BasketProps = {
+  id: string
+  name: string
+  price: number
+  image: string
+  type: number
+  size: string
+  count: number
+}
+
+const BasketItem: React.FC<BasketProps> = ({
+  id,
+  name,
+  price,
+  image,
+  count,
+  type,
+  size,
+}) => {
   const dispatch = useDispatch()
 
   const onClickPlus = () => {
@@ -40,7 +58,7 @@ const BasketItem = ({ id, name, price, image, count, type, size }) => {
         <div className={style.pizzaInfo}>
           <h3>{name}</h3>
           <p>
-            {type === 0 ? 'thin' : 'origin'}, {size}
+            {type === 1 ? 'thin' : 'origin'}, {size}
           </p>
         </div>
       </div>

@@ -7,15 +7,20 @@ import { FiSearch } from 'react-icons/fi'
 import debounce from 'lodash.debounce'
 import { useSelector } from 'react-redux'
 
-const Header = ({ searchValue, setSearchValue }) => {
+type HeaderProps = {
+  searchValue: string
+  setSearchValue: (el: string) => void
+}
+
+const Header: React.FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
   const [value, setValue] = React.useState('')
-  const inputRef = React.useRef()
-  const onClickClear = el => {
+  const inputRef = React.useRef<HTMLInputElement>(null)
+  const onClickClear = (el: string) => {
     setValue(el)
     testDobounce(el)
   }
   const testDobounce = React.useCallback(
-    debounce(el => {
+    debounce((el: string) => {
       setSearchValue(el)
     }, 350),
     []

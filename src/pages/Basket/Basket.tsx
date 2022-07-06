@@ -10,10 +10,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import BasketItem from './BasketItem'
 import { clearItem } from '../../redux/Slisers/basketSlice'
 import BasketEmpty from './BasketNone/BasketEmpty'
+import { RootState } from '../../redux/Store'
 
-const Basket = () => {
+const Basket: React.FC = () => {
   const dispatch = useDispatch()
-  const { totalPrice, items } = useSelector(state => state.cartSlice)
+  const { totalPrice, items } = useSelector(
+    (state: RootState) => state.cartSlice
+  )
 
   const onClickClear = () => {
     if (window.confirm('Really ?')) dispatch(clearItem())
@@ -40,7 +43,7 @@ const Basket = () => {
             </span>
           </h1>
           <div className={style.list}>
-            {items.map(el => (
+            {items.map((el: any) => (
               <BasketItem key={el.id} {...el} />
             ))}
             <div className={style.total}>

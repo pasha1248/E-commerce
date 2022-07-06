@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { setCategoryId } from '../../redux/Slisers/FilterSlise'
 import qs from 'qs'
+import { RootState } from '../../redux/Store'
 
 const menuItem = [
   { icon: pizzaIcon, name: 'Pizza', path: 'pizza' },
@@ -23,12 +24,32 @@ const menuItem = [
   { icon: taco, name: 'Taco', path: 'taco' },
   { icon: drink, name: 'Drinks', path: 'drinks' },
 ]
+type MenuProps = {
+  searchValue: string
+}
 
-const Menu = ({ searchValue }) => {
+const Menu: React.FC<MenuProps> = ({ searchValue }) => {
   const dispatch = useDispatch()
 
-  const categoryId = useSelector(state => state.filterSlice.categoryId)
+  const categoryId = useSelector(
+    (state: RootState) => state.filterSlice.categoryId
+  )
+  const { items, totalPrice } = useSelector(
+    (state: RootState) => state.cartSlice
+  )
 
+  const isMounted = React.useRef(false)
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items)
+      const json1 = JSON.stringify(totalPrice)
+
+      window.localStorage.setItem('basket', json)
+      window.localStorage.setItem('total', json1)
+    }
+    isMounted.current = true
+  }, [items])
   //  ///
   //
   //
@@ -39,23 +60,21 @@ const Menu = ({ searchValue }) => {
 
   // const [sort, setSort] = useState('Popular')
 
-  const onChangeCategory = i => {
+  const onChangeCategory = (i: string) => {
     // setSort(i)
-    console.log(i)
-    dispatch(setCategoryId(i))
+
+    setCategoryId(i)
   }
 
   React.useEffect(() => {})
 
-  const addMenu2 = id => {
+  const addMenu2 = (id: number) => {
     setActive(id)
   }
 
-  const menuClick = link => {
+  const menuClick = (link: string) => {
     setRoute(link)
   }
-
-  const onClickCategory = id => {}
 
   return (
     <>

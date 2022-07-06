@@ -1,0 +1,19 @@
+/** @format */
+
+.pizza {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    height: 400px;
+    border-radius: 50%;
+  }
+  h2 {
+    padding: 30px;
+  }
+  p {
+    width: 300px;
+  }
+}
