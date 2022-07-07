@@ -2,8 +2,6 @@
 
 import React from 'react'
 import style from './Popap.module.scss'
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../redux/Store'
 
 type PopapProps = {
   onClickSort: (i: string) => void
@@ -15,11 +13,7 @@ type PopupClick = MouseEvent & {
 }
 
 const Popap: React.FC<PopapProps> = ({ onClickSort, value }) => {
-  const dispatch = useDispatch()
-  const sort = useSelector((state: RootState) => state.filterSlice.sort)
-
   const [open, setOpened] = React.useState(false)
-  const [selected, setSelected] = React.useState('Popular')
 
   const sortRef = React.useRef<HTMLDivElement>(null)
 

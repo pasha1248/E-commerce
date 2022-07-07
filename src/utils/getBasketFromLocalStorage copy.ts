@@ -1,7 +1,5 @@
 /** @format */
 
-import React from 'react'
-
 const getBasketFromLocalStorage = () => {
   const data = window.localStorage.getItem('basket')
 

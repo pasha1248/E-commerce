@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from 'react'
+import React from 'react'
 import style from './Menu.module.scss'
 import burger from '../../assets/icon/burger.png'
 import drink from '../../assets/icon/drink.png'
@@ -9,12 +9,9 @@ import sneck from '../../assets/icon/sneck.png'
 import taco from '../../assets/icon/taco.png'
 import MenuItem from './MenuItem'
 import Popap from '../popap/Popap'
-import Pizza from '../PizzaItem/Pizza'
 import menuDis from './MenuSwith'
 import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
 import { setCategoryId } from '../../redux/Slisers/FilterSlise'
-import qs from 'qs'
 import { RootState } from '../../redux/Store'
 
 const menuItem = [
@@ -29,8 +26,6 @@ type MenuProps = {
 }
 
 const Menu: React.FC<MenuProps> = ({ searchValue }) => {
-  const dispatch = useDispatch()
-
   const categoryId = useSelector(
     (state: RootState) => state.filterSlice.categoryId
   )
@@ -49,7 +44,7 @@ const Menu: React.FC<MenuProps> = ({ searchValue }) => {
       window.localStorage.setItem('total', json1)
     }
     isMounted.current = true
-  }, [items])
+  }, [items, totalPrice])
   //  ///
   //
   //

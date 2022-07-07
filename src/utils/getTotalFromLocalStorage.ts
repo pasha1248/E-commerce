@@ -1,7 +1,5 @@
 /** @format */
 
-import React from 'react'
-
 const getTotalFromLocalStorage = () => {
   const data = window.localStorage.getItem('total')
 

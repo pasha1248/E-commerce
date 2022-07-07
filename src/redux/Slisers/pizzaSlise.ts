@@ -3,9 +3,8 @@
 import { RootState } from './../Store'
 /** @format */
 
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-import { CartItem } from './basketSlice'
 
 export const fetchPizza = createAsyncThunk(
   'pizza/fetchPizzasStatus',

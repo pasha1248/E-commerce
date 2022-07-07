@@ -1,13 +1,12 @@
 /** @format */
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import 'macro-css'
 import style from './Pizza.module.scss'
 import PizzaItem from './PizzaItem'
 import PizzaSkeleton from './PizzaSkeleton'
-import axios from 'axios'
 import { useSelector } from 'react-redux'
-import { setItems, fetchPizza } from '../../redux/Slisers/pizzaSlise'
+import { fetchPizza } from '../../redux/Slisers/pizzaSlise'
 import { RootState, useAppDispatch } from '../../redux/Store'
 
 type PizzaProps = {
@@ -16,7 +15,7 @@ type PizzaProps = {
 
 const Pizza: React.FC<PizzaProps> = ({ searchValue }) => {
   const dispatch = useAppDispatch()
-  const [pizza, setPizza] = React.useState([])
+  // const [pizza, setPizza] = React.useState([])
 
   // const { searchValue } = React.useContext(MyContext)
   // console.log(searchValue)
@@ -25,9 +24,9 @@ const Pizza: React.FC<PizzaProps> = ({ searchValue }) => {
   React.useEffect(() => {
     dispatch(
       // @ts-ignore
-      fetchPizza(pizza.data)
+      fetchPizza(items.data)
     )
-  }, [])
+  }, [items, dispatch])
 
   return (
     <div className={style.pizzaContainer}>

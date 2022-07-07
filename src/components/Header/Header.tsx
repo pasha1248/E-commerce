@@ -5,7 +5,6 @@ import style from './Header.module.scss'
 import { IoPizzaOutline } from 'react-icons/io5'
 import { FiSearch } from 'react-icons/fi'
 import debounce from 'lodash.debounce'
-import { useSelector } from 'react-redux'
 
 type HeaderProps = {
   searchValue: string
