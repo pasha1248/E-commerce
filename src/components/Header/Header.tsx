@@ -4,25 +4,26 @@ import React from 'react'
 import style from './Header.module.scss'
 import { IoPizzaOutline } from 'react-icons/io5'
 import { FiSearch } from 'react-icons/fi'
-import debounce from 'lodash.debounce'
+import _debounce from 'lodash.debounce'
 
 type HeaderProps = {
   searchValue: string
-  setSearchValue: (el: string) => void
+  setSearchValue: any
 }
 
 const Header: React.FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
   const [value, setValue] = React.useState('')
   const inputRef = React.useRef<HTMLInputElement>(null)
-  const onClickClear = (el: string) => {
-    setValue(el)
-    testDobounce(el)
+  const onClickClear = (el: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(el.target.value)
+    testDobounce(el.target.value)
   }
   const testDobounce = React.useCallback(
-    debounce((el: string) => {
-      setSearchValue(el)
-    }, 350),
-    []
+    (i: string) =>
+      _debounce((i: string) => {
+        setSearchValue(i)
+      }, 350),
+    [setSearchValue]
   )
 
   return (
@@ -36,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ searchValue, setSearchValue }) => {
         <input
           ref={inputRef}
           value={value}
-          onChange={e => onClickClear(e.target.value)}
+          onChange={onClickClear}
           type='text'
           placeholder='Search by food name'
           style={{ marginRight: '80px' }}

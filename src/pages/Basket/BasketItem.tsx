@@ -54,7 +54,7 @@ const BasketItem: React.FC<BasketProps> = ({
   return (
     <article className={style.item}>
       <div className={style.itemLeft}>
-        <img src={image} alt='Photo' height={70} />
+        <img src={image} alt='Photo5' height={70} />
         <div className={style.pizzaInfo}>
           <h3>{name}</h3>
           <p>

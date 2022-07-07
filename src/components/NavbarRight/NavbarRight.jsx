@@ -9,7 +9,6 @@ import { useLocation } from 'react-router-dom'
 
 const NavbarRight = () => {
   const { totalPrice, items } = useSelector(state => state.cartSlice)
-  const { name, image, count } = items
 
   const { pathname } = useLocation()
 

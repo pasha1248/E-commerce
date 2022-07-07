@@ -8,19 +8,19 @@ import Taco from '../Taco/Taco'
 /** @format */
 
 function menuDis(el, searchValue) {
-  if (el == 'pizza') {
+  if (el === 'pizza') {
     return <Pizza searchValue={searchValue} />
   }
-  if (el == 'burger') {
+  if (el === 'burger') {
     return <Burger searchValue={searchValue} />
   }
-  if (el == 'sneck') {
+  if (el === 'sneck') {
     return <Sneck />
   }
-  if (el == 'taco') {
+  if (el === 'taco') {
     return <Taco />
   }
-  if (el == 'drinks') {
+  if (el === 'drinks') {
     return <Drinks />
   }
 }

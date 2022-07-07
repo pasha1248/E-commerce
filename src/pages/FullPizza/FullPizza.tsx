@@ -21,7 +21,6 @@ const FullPizza: React.FC = () => {
           'https://62ac334c9fa81d00a7abe063.mockapi.io/pizza/' + id
         )
         setPizza(data)
-        console.log(pizza)
       } catch (error) {
         alert('Error')
         console.log(error)
@@ -29,14 +28,14 @@ const FullPizza: React.FC = () => {
     }
 
     fetchPizza()
-  }, [])
+  }, [id])
 
   if (!pizza) {
     return <>Loading...</>
   }
   return (
     <div className={style.pizza}>
-      <img src={pizza.image} alt='photo' />
+      <img src={pizza.image} alt='photo45' />
       <h2>{pizza.name}</h2>
       <p>{pizza.info}</p>
       <h4>{pizza.price}</h4>
